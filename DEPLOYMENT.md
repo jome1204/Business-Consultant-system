@@ -62,7 +62,7 @@ This repository includes `render.yaml` for a Render Blueprint deployment.
 4. Select the repository and apply the blueprint.
 5. Render will create:
    - `business-consultant-system-api`
-   - `business-consultant-system`
+   - `business-consultant-system` as a static web service
 6. After the API deploys, confirm:
 
 ```text

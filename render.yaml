@@ -19,7 +19,8 @@ services:
       - key: MONGODB_URI
         value: mongodb://localhost:27017/dashen_ai_consultant
 
-  - type: static
+  - type: web
+    runtime: static
     name: business-consultant-system
     rootDir: client
     buildCommand: npm install && npm run build
