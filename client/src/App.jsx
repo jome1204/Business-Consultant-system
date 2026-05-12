@@ -258,7 +258,7 @@ function Overview({ user }) {
 }
 
 function Assistant() {
-  const [message, setMessage] = useState('How can I improve my savings?');
+  const [message, setMessage] = useState('');
   const [chat, setChat] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -287,7 +287,22 @@ function Assistant() {
         <span>Multilingual-ready advisory workflow</span>
       </div>
       <div className="chat-window">
-        {chat.length === 0 && <p className="empty-chat">Ask about savings, risk, investments, or business cash flow.</p>}
+        {chat.length === 0 && (
+          <div className="assistant-empty">
+            <p className="empty-chat">Write your own question below.</p>
+            <div className="suggestion-row">
+              {[
+                'How can I save more money?',
+                'How should I separate my money?',
+                'What investment risk is right for me?'
+              ].map((suggestion) => (
+                <button type="button" className="ghost-button" key={suggestion} onClick={() => setMessage(suggestion)}>
+                  {suggestion}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
         {chat.map((item, index) => (
           <div className="chat-pair" key={`${item.message}-${index}`}>
             <p className="bubble user"><MessageSquareText size={16} /> {item.message}</p>
@@ -296,7 +311,11 @@ function Assistant() {
         ))}
       </div>
       <form className="chat-form" onSubmit={sendMessage}>
-        <input value={message} onChange={(event) => setMessage(event.target.value)} />
+        <input
+          placeholder="Type your financial or business question..."
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
+        />
         <button className="primary-button" disabled={loading}>
           {loading ? <Loader2 size={16} className="spin" /> : <Send size={16} />} Send
         </button>
