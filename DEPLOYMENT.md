@@ -52,7 +52,32 @@ Expected services:
 - `server` on port `5000`
 - `mongodb` on port `27017`
 
-## 4. Production Hardening Checklist
+## 4. Render Deployment
+
+This repository includes `render.yaml` for a Render Blueprint deployment.
+
+1. Open Render Dashboard.
+2. Choose **New** then **Blueprint**.
+3. Connect GitHub repository `jome1204/Business-Consultant-system`.
+4. Select the repository and apply the blueprint.
+5. Render will create:
+   - `business-consultant-system-api`
+   - `business-consultant-system`
+6. After the API deploys, confirm:
+
+```text
+https://business-consultant-system-api.onrender.com/api/health
+```
+
+7. Open the frontend:
+
+```text
+https://business-consultant-system.onrender.com
+```
+
+For a production database, replace the temporary `MONGODB_URI` value with a MongoDB Atlas connection string in the API service environment settings.
+
+## 5. Production Hardening Checklist
 
 - Replace demo data repositories with MongoDB-backed repositories.
 - Rotate `JWT_SECRET` and store it in a secret manager.
@@ -64,7 +89,7 @@ Expected services:
 - Add automated API, UI, security, and accessibility tests to CI.
 - Configure monitoring, logs, alerts, backups, and disaster recovery.
 
-## 5. Release Smoke Test
+## 6. Release Smoke Test
 
 After deployment:
 
