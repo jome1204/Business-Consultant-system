@@ -6,7 +6,7 @@ const passwordHash = bcrypt.hashSync('password123', 10);
 export const users = [
   {
     id: 'u-customer',
-    fullName: 'Meron Bekele',
+    fullName: 'Yohannes Kefale',
     email: 'customer@dashen.ai',
     passwordHash,
     role: 'CUSTOMER',
