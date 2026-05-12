@@ -114,7 +114,7 @@ export function App() {
 }
 
 function LoginScreen({ onLogin }) {
-  const [email, setEmail] = useState('customer@dashen.ai');
+  const [email, setEmail] = useState('yohannes@dashen.ai');
   const [password, setPassword] = useState('password123');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -165,7 +165,7 @@ function LoginScreen({ onLogin }) {
         <button className="primary-button" disabled={loading}>
           {loading ? <><Loader2 size={16} className="spin" /> Signing in</> : 'Login'}
         </button>
-        <p className="demo-users">Try customer@dashen.ai, sme@dashen.ai, advisor@dashen.ai, or admin@dashen.ai with password123.</p>
+        <p className="demo-users">Try yohannes@dashen.ai, sme@dashen.ai, advisor@dashen.ai, or admin@dashen.ai with password123.</p>
       </form>
     </main>
   );

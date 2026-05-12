@@ -29,7 +29,7 @@ MERN stack MVP for an AI-powered financial advisory and business consulting plat
 
 | Role | Email | Password |
 | --- | --- | --- |
-| Customer | customer@dashen.ai | password123 |
+| Customer | yohannes@dashen.ai | password123 |
 | SME Customer | sme@dashen.ai | password123 |
 | Advisor | advisor@dashen.ai | password123 |
 | Admin | admin@dashen.ai | password123 |
