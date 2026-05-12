@@ -41,6 +41,14 @@ app.use(
 app.use(express.json({ limit: '1mb' }));
 app.use(morgan(process.env.NODE_ENV === 'production' ? 'combined' : 'dev'));
 
+app.get('/', (req, res) => {
+  res.json({
+    service: 'Dashen AI Business Consultant API',
+    message: 'API is running. Use /api/health for health checks or open the frontend website.',
+    health: '/api/health'
+  });
+});
+
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
